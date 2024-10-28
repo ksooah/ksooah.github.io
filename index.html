@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>202401500_김수아</title>
+    <style>
+        div{
+            /* display: inline-block; */
+            width: 200px;
+            height: 100px;
+            border: 2px ridge pink;
+            background-color: lemonchiffon;
+        }
+        #n3:hover{opacity: 0.6;
+        }
+        .sub{
+            background-color: skyblue;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+        #fix{
+            position: fixed;
+            /* position: absolute; */
+            bottom: 50px;
+            right: 100px;
+        }
+        #float{
+            position: fixed;
+            bottom: 200px;
+            left: 300px;     
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>DIV1</div>
+    <div class="sub">DIV2</div>
+    <div id="n3">DIV3</div>
+    <div class="sub">DIV4</div>
+    <div>DIV5</div>
+    <div id="fix">DIV6</div>
+    <div id="float">DIV7
+        <img src="star.png" width="200px" style="float: left">
+    </div>
+</body>
+</html>
