@@ -1,49 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>202401500_김수아</title>
+    <title>하루 돌보미</title>
     <style>
-        div{
-            /* display: inline-block; */
-            width: 200px;
-            height: 100px;
-            border: 2px ridge pink;
-            background-color: lemonchiffon;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            background-color: rgb(239, 237, 233);
+            color:rgb(57, 49, 27);
         }
-        #n3:hover{opacity: 0.6;
+
+        header {
+            width: 100%;
+            background-color: rgb(90, 82, 62);
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
-        .sub{
-            background-color: skyblue;
-            position: relative;
-            top: 20px;
-            left: 20px;
+
+        #name{
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            font-size: 17px;
+            color: white;
+            text-align: center;
         }
-        #fix{
-            position: fixed;
-            /* position: absolute; */
-            bottom: 50px;
-            right: 100px;
+
+        nav{
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            font-size: 18px;
         }
-        #float{
-            position: fixed;
-            bottom: 200px;
-            left: 300px;     
-            width: 400px;
-            height: 300px;
+
+        nav ul li{
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+            padding: 0px 25px;
         }
+
+        nav ul li a{
+            color: rgb(67, 61, 46);
+            text-decoration: none;
+        }
+
+        nav ul li a:hover{
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 20px 50px;
+            padding: 10px 30px;
+            background-color: white;
+            border-radius: 10px;
+            
+        }
+
+        aside {
+            background-color: rgb(253, 250, 236);
+            margin: 20px 50px;
+            padding: 5px 25px;
+            border: 3px dotted burlywood
+        }
+
+        hr{
+            border: 1px dotted gainsboro;
+        }
+
     </style>
 </head>
+
 <body>
-    <div>DIV1</div>
-    <div class="sub">DIV2</div>
-    <div id="n3">DIV3</div>
-    <div class="sub">DIV4</div>
-    <div>DIV5</div>
-    <div id="fix">DIV6</div>
-    <div id="float">DIV7
-        <img src="star.png" width="200px" style="float: left">
-    </div>
+    <header id="home">
+        <h1>하루 돌보미</h1>
+        <p>To-do List와 일기 작성을 통해 나의 하루를 관리해요.</p>
+    </header>
+    
+    <div id="name">202401500<br>
+    김수아</div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">홈</a></li>
+            <li><a href="#todo-section">To-do List</a></li>
+            <li><a href="#diary">오늘의 일기</a></li>
+            <li><a href="#my-day">내 하루 돌아보기</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        <h2>오늘의 정보</h2>
+        <p>오늘의 날짜: <span id="t-date"></span></p>
+        <p>오늘의 날씨: <span id="weather"></span></p>
+    </aside>
+
+    <section id="todo-section">
+        <h2>To-do List</h2>
+        <hr>
+        <p>오늘의 할 일을 정리해봐요.</p>
+        <form id="todo">
+            <input type="text" id="todo-input" placeholder="할 일">
+            <button type="submit">추가</button>
+        </form>
+        <ul id="todo-list">
+        </ul>
+    </section>
+
+    <section id="diary">
+        <h2>오늘의 일기</h2>
+        <hr>
+        <form id="diary-form">
+            <label for="date">날짜:</label>
+            <input type="date" id="date">
+
+            <label for="mood">오늘의 감정:</label>
+            <select id="mood">
+                <option value="happy">행복</option>
+                <option value="sad">슬픔</option>
+                <option value="angry">화남</option>
+                <option value="excited">신남</option>
+                <option value="soso">보통</option>
+            </select>
+            <p>
+                <textarea cols="80" rows="15" id="diary-input" placeholder="오늘 하루는 어떠셨나요?"></textarea>
+                <br><button type="submit">저장</button>
+            </p>
+        </form>
+    </section>
+
+    <section id="my-day">
+        <h2>내 하루 돌아보기</h2>
+        <hr>
+        <p>기록된 나의 하루를 다시 돌아봐요.</p>
+        <label for="e-date">날짜:</label>
+        <input type="date" id="e-date">
+        <hr>
+
+        <h3>일기</h3>
+        <div id="save-diary">
+            <p>• 저장된 일기</p>
+        </div>
+        <hr>
+
+        <h3>To-do List</h3>
+        <ul id="save-todo">
+            <li>저장된 투두리스트</li>
+        </ul>
+    </section>
 </body>
+
 </html>
